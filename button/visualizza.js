@@ -41,4 +41,4 @@ function visualizza(x, y, ciao) {
   return result;
 }
 
-// visualizza(10, 10, "ciao");
+// console.log(visualizza(10, 10, "ciao"));
