@@ -46,7 +46,7 @@ const dest = Object.assign({}, source0, source1, source2)
 const source1 = { a: '1', b: '2', c: '3' };
 const source2 = { b: '4', d: '5' };
 
-const dest = { ... source1, ...source2 };
+const dest = { ...source1, ...source2 };
 
 Object.keys(obj).forEach(key => {
   const value = obj[key]
