@@ -1,3 +1,11 @@
+const {
+  greet,
+  shout,
+  punctuate,
+  wrapInHtml,
+  convert,
+} = require("./function-composition");
+
 describe("Function composition", () => {
   it("should convert a string", () => {
     // given
@@ -11,13 +19,13 @@ describe("Function composition", () => {
     expect(result).toBe(output);
   });
 
-  it.only("should greet someone", () => {
+  it("should greet someone", () => {
     // given
     const input = "Antony";
     const output = "Hello Antony";
 
     // when
-    const result = greet(input);
+    const result = greet("Hello")(input);
 
     // then
     expect(result).toBe(output);
@@ -41,7 +49,7 @@ describe("Function composition", () => {
     const output = "Antony!";
 
     // when
-    const result = punctuate(input);
+    const result = punctuate("!")(input);
 
     // then
     expect(result).toBe(output);
@@ -53,7 +61,7 @@ describe("Function composition", () => {
     const output = "<h1>Antony</h1>";
 
     // when
-    const result = wrapInHtml(input);
+    const result = wrapInHtml("h1")(input);
 
     // then
     expect(result).toBe(output);
