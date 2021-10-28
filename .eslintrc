@@ -10,8 +10,8 @@
   },
   "rules": {
     "semi": ["error", "always"],
-    "comma-dangle": ["error", "never"],
-    "indent": ["error", 2],
+    "comma-dangle": ["warn", "never"],
+    "indent": ["warn", 2],
     "space-in-parens": ["error", "never"],
     "keyword-spacing": ["error"],
     "space-infix-ops": ["error"],
@@ -23,7 +23,7 @@
       }
     ],
     "no-var": "error",
-    "no-use-before-define": ["error"],
+    "no-use-before-define": ["warn"],
     "space-unary-ops": ["error"],
     "space-before-blocks": "error",
     "brace-style": "error",
