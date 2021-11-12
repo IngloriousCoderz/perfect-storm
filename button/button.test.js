@@ -6,7 +6,8 @@ describe("Button App", () => {
     const rows = 10;
     const columns = 10;
     const label = "ciao";
-    const expectedResult = `* * * * * * * * * * 
+    const expectedResult = `
+* * * * * * * * * * 
 *                 * 
 *                 * 
 *                 * 
@@ -17,7 +18,7 @@ describe("Button App", () => {
 *                 * 
 *                 * 
 * * * * * * * * * * 
-`;
+`.slice(1);
 
     // when
     const result = button(rows, columns, label);
