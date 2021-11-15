@@ -1,10 +1,10 @@
-const pineTree = require("./pine-tree");
+const firTree = require("./fir-tree");
 const oakTree = require("./oak-tree");
 const { createDecorator } = require("./balls-decorator");
 
-describe("Balls decorator", () => {
-  it("should decorate a pine tree by putting balls in the canopy", () => {
-    const { buildTree } = createDecorator(pineTree);
+describe("Balls Decorator", () => {
+  it("should decorate a fir tree by putting balls in the canopy", () => {
+    const { buildTree } = createDecorator(firTree);
     const width = 8;
     const height = 6;
 

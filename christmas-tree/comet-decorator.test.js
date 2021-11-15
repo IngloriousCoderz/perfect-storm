@@ -1,9 +1,10 @@
 const firTree = require("./fir-tree");
 const oakTree = require("./oak-tree");
-const { putCometOnTopOfTree } = require("./comet");
+const { createDecorator } = require("./comet-decorator");
 
-describe("Comet Decoration", () => {
+describe("Comet Decorator", () => {
   it("should decorate a fir tree by putting a comet on top", () => {
+    const { buildTree } = createDecorator(firTree);
     const width = 8;
     const height = 6;
     const expectedResult = `
@@ -15,13 +16,13 @@ describe("Comet Decoration", () => {
 --------
    ||`.slice(1);
 
-    let result = firTree.buildTree({ width, height });
-    result = putCometOnTopOfTree(result, width);
+    const result = buildTree({ width, height });
 
     expect(result).toBe(expectedResult);
   });
 
-  it("should decorate a oak tree by putting an angel on top", () => {
+  it("should decorate an oak tree by putting a comet on top", () => {
+    const { buildTree } = createDecorator(oakTree);
     const width = 10;
     const height = 7;
     const expectedResult = `
@@ -34,8 +35,7 @@ describe("Comet Decoration", () => {
     ||
     ||`.slice(1);
 
-    let result = oakTree.buildTree({ width, height });
-    result = putCometOnTopOfTree(result, width);
+    const result = buildTree({ width, height });
 
     expect(result).toBe(expectedResult);
   });

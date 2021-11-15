@@ -1,4 +1,11 @@
-const firTree = require("./fir-tree");
+/* eslint-disable comma-dangle */
+const {
+  buildTree,
+  buildCanopy,
+  buildCanopyRow,
+  buildBase,
+  buildTrunk,
+} = require("./fir-tree");
 
 describe("Fir Tree", () => {
   it("should build the tree", () => {
@@ -12,7 +19,7 @@ describe("Fir Tree", () => {
 --------
    ||`.slice(1);
 
-    const result = firTree.buildTree({ width, height });
+    const result = buildTree({ width, height });
 
     expect(result).toBe(expectedResult);
   });
@@ -25,7 +32,7 @@ describe("Fir Tree", () => {
  /    \\
 /      \\`.slice(1);
 
-    const result = firTree.buildCanopy({ height });
+    const result = buildCanopy({ height });
 
     expect(result).toBe(expectedResult);
   });
@@ -35,7 +42,7 @@ describe("Fir Tree", () => {
     const height = 4;
     const expectedResult = "   /\\";
 
-    const result = firTree.buildCanopyRow({ index, height });
+    const result = buildCanopyRow({ index, height });
 
     expect(result).toBe(expectedResult);
   });
@@ -45,7 +52,7 @@ describe("Fir Tree", () => {
     const height = 4;
     const expectedResult = "  /  \\";
 
-    const result = firTree.buildCanopyRow({ index, height });
+    const result = buildCanopyRow({ index, height });
 
     expect(result).toBe(expectedResult);
   });
@@ -55,7 +62,7 @@ describe("Fir Tree", () => {
     const height = 4;
     const expectedResult = "/      \\";
 
-    const result = firTree.buildCanopyRow({ index, height });
+    const result = buildCanopyRow({ index, height });
 
     expect(result).toBe(expectedResult);
   });
@@ -64,7 +71,7 @@ describe("Fir Tree", () => {
     const width = 8;
     const expectedResult = "--------";
 
-    const result = firTree.buildBase({ width });
+    const result = buildBase({ width });
 
     expect(result).toBe(expectedResult);
   });
@@ -73,7 +80,7 @@ describe("Fir Tree", () => {
     const width = 8;
     const expectedResult = "   ||";
 
-    const result = firTree.buildTrunk({ width });
+    const result = buildTrunk({ width });
 
     expect(result).toBe(expectedResult);
   });

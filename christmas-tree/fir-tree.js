@@ -6,6 +6,15 @@ module.exports = {
   buildTrunk,
 };
 
+/**
+ *    /\
+ *   /  \
+ *  /    \
+ * /      \
+ * --------
+ *    ||
+ */
+
 function buildTree({ width, height }) {
   const base = buildBase({ width });
   const baseHeight = base.split("\n").length;
@@ -14,31 +23,28 @@ function buildTree({ width, height }) {
   const trunkHeight = trunk.split("\n").length;
 
   const canopyHeight = height - baseHeight - trunkHeight;
-
-  return `${buildCanopy({ height: canopyHeight })}
+  return `${buildCanopy({ width, height: canopyHeight })}
 ${base}
 ${trunk}`;
 }
 
-function buildCanopy({ height }) {
+function buildCanopy({ width, height }) {
   const result = [];
   for (let i = 0; i < height; i++) {
-    result.push(buildCanopyRow({ index: i, height }));
+    result.push(buildCanopyRow({ index: i, width, height }));
   }
   return result.join("\n");
 }
 
 function buildCanopyRow({ index, height }) {
   const lastRow = height - 1;
-  const offset = lastRow - index;
-  const spacesBetweenBorders = index * 2;
 
   let result = "";
-  for (let i = 0; i < offset; i++) {
+  for (let i = 0; i < lastRow - index; i++) {
     result += " ";
   }
   result += "/";
-  for (let i = 0; i < spacesBetweenBorders; i++) {
+  for (let i = 0; i < index * 2; i++) {
     result += " ";
   }
   result += "\\";
@@ -46,7 +52,11 @@ function buildCanopyRow({ index, height }) {
 }
 
 function buildBase({ width }) {
-  return "-".repeat(width);
+  let result = "";
+  for (let i = 0; i < width; i++) {
+    result += "-";
+  }
+  return result;
 }
 
 function buildTrunk({ width }) {

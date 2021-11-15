@@ -6,6 +6,16 @@ module.exports = {
   buildTrunk,
 };
 
+/**
+ * /--------\
+ * |        |
+ * |        |
+ * \--------/
+ *    \\//
+ *     ||
+ *     ||
+ */
+
 function buildTree({ width, height }) {
   const base = buildBase({ width });
   const baseHeight = base.split("\n").length;

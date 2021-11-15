@@ -1,4 +1,5 @@
-const pineTree = require("./pine-tree");
+/* eslint-disable indent */
+const firTree = require("./fir-tree");
 const oakTree = require("./oak-tree");
 
 const angel = require("./angel-decorator");
@@ -17,11 +18,11 @@ const decorate = compose(
 );
 
 describe("Christmas Tree", () => {
-  it("should combine all decorators on a pine tree", () => {
+  it("should combine all decorators on a fir tree", () => {
     const width = 8;
     const height = 6;
 
-    const christmasTree = decorate(pineTree);
+    const christmasTree = decorate(firTree);
 
     const result = christmasTree.buildTree({ width, height });
 
